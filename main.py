@@ -108,7 +108,7 @@ def get_on_sale_products():
             "url": item["permalink"],
             "image": {
                 "@type": "ImageObject",
-                "url": item["images"][0]["src"] if item.get("images") else ""
+                "url": item.get("image", {}).get("src", "")
             },
             "price": item.get("price"),
             "description": item.get("short_description", "")
